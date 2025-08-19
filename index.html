@@ -10,18 +10,22 @@
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
 </head>
-<body>
+<body style="background-color: #e1e1e1;">
 
 <!-- Top Headline -->
 <header class="top-headline">
   <span>Open to work</span>
-  <span>Joshua Pratama</span>
+  <span>J<span class="letter-anim">o</span>shua Pratama</span>
   <span>Portfolio</span>
 </header>
 
 <!-- Hero Section -->
 <section class="hero">
+  <div class="hero-photo">
+    <img src="assets/projects/user.jpg" alt="Joshua Photo">
+  </div>
   <div class="hero-text">
     <h1 class="hero-title">
       G<span class="letter-anim">R</span>APHIC<br>
@@ -30,9 +34,6 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P<span class="letter-anim">R</span>ODUCER
     </h1>
   </div>
-  <div class="hero-photo">
-    <img src="https://via.placeholder.com/500x600" alt="Joshua Photo">
-  </div>
 </section>
 
 <!-- About Section -->
@@ -40,13 +41,13 @@
   <div class="about-wrapper">
     <div class="about-text">
       <h2>Ab<span class="letter-anim">o</span>ut</h2>
-      <p>
-        I am Joshua Pratama, a Graphic Designer & Video Producer passionate about creating digital experiences that inspire and engage.
-      </p>
     </div>
     <div class="about-description">
       <p>
-        My work blends creativity with precision, ensuring every detail contributes to a powerful story.
+        I am Joshua Pratama, a Graphic Designer & Video Producer passionate about creating digital designs that sends a message.
+      </p>
+      <p>
+        Loves creative designs, dependable, detail oriented, and always aim to stay consistent and give value. He's flexible and bring a positive attitude to work and a part of a team.
       </p>
     </div>
   </div>
@@ -56,7 +57,6 @@
 <section class="ticker">
   <div class="ticker-wrapper" id="ticker">
     <div class="ticker-content">SELECTED PROJECTS - SELECTED PROJECTS - SELECTED PROJECTS -</div>
-    <div class="ticker-content">SELECTED PROJECTS - SELECTED PROJECTS - SELECTED PROJECTS -</div>
   </div>
 </section>
 
@@ -65,32 +65,71 @@
   <div class="project" data-aos="fade-up">
     <div class="dot"></div>
     <div class="line"></div>
-    <img src="https://via.placeholder.com/900x600" alt="Project 1">
-    <p>Project One Description</p>
+    <img src="assets/projects/project1.jpg" alt="Project 1">
+    <p>
+    Digitalized era, combination of
+    <p>
+    </p>the renaissance and our current modern world.</p>
   </div>
   <div class="project" data-aos="fade-up">
     <div class="dot"></div>
     <div class="line"></div>
-    <img src="https://via.placeholder.com/900x600" alt="Project 2">
-    <p>Project Two Description</p>
+    <img src="assets/projects/project2.jpg" alt="Project 2">
+    <p>
+    Ilhoutte, sleek, minimal, clean design.
+    <p>
+    </p>Shows product and purpose</p>
   </div>
   <div class="project" data-aos="fade-up">
     <div class="dot"></div>
     <div class="line"></div>
-    <img src="https://via.placeholder.com/900x600" alt="Project 3">
-    <p>Project Three Description</p>
+    <img src="assets/projects/project3.jpg" alt="Project 3">
+    <p>It's taste! just simple advertising.</p>
+  </div>
+  <div class="project" data-aos="fade-up">
+    <div class="dot"></div>
+    <div class="line"></div>
+    <img src="assets/projects/project4.jpg" alt="Project 4">
+    <p>MOMENTS, learn to live in the moment.</p>
+  </div>
+  <div class="project" data-aos="fade-up">
+    <div class="dot"></div>
+    <div class="line"></div>
+    <img src="assets/projects/project5.jpg" alt="Project 5">
+    <p>
+    Stronger than it looks,
+    <p>
+    </p>advertisement for The Hundred Glove company.</p>
+  </div>
+  <div class="project" data-aos="fade-up">
+    <div class="dot"></div>
+    <div class="line"></div>
+    <img src="assets/projects/project6.jpg" alt="Project 6">
+    <p>bassh, name that I made up just for this portfolio.</p>
+  </div>
+  <div class="project" data-aos="fade-up">
+    <div class="dot"></div>
+    <div class="line"></div>
+    <img src="assets/projects/project7.jpg" alt="Project 7">
+    <p>Discount ad for The Hundred Glove company.</p>
+  </div>
+  <div class="project" data-aos="fade-up">
+    <div class="dot"></div>
+    <div class="line"></div>
+    <img src="assets/projects/project8.jpg" alt="Project 8">
+    <p>Raise The Bar, Shake the bar</p>
   </div>
 </section>
 
-<!-- Contact Section -->
+
 <section class="contact" data-aos="fade-up">
-  <h2>Let’s design it right</h2>
-  <p>Email: <span class="no-blue">joshuapratamaoz77@gmail.com</span></p>
+  <h2 class="typewriter">LET’S DESIGN IT RIGHT</h2>
+  <p>drop me an email: <span class="no-blue">joshuapratamaoz77@gmail.com</span></p>
 </section>
 
 <!-- Footer + Back to top -->
 <footer>
-  <button id="backToTop">↑ Back to Top</button>
+  <button id="backToTop">↑</button>
   <p>© 2025 Joshua Pratama. All rights reserved.</p>
 </footer>
 
@@ -101,11 +140,12 @@
 <script>
 AOS.init({ once: false });
 
+// Lenis smooth scroll
 const lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
 function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
 requestAnimationFrame(raf);
 
-// Scroll-controlled ticker
+// Scroll ticker
 const ticker = document.getElementById("ticker");
 window.addEventListener("scroll", () => {
   let offset = window.scrollY * -0.3;
@@ -113,11 +153,9 @@ window.addEventListener("scroll", () => {
 });
 
 // Back to top
-document.getElementById("backToTop").addEventListener("click", () => {
-  lenis.scrollTo(0);
-});
+document.getElementById("backToTop").addEventListener("click", () => { lenis.scrollTo(0); });
 
-// Hero animation
+// Hero title animation
 const hero = document.querySelector(".hero-title");
 if(hero){
   const lines = hero.innerHTML.split("<br>");
@@ -139,22 +177,55 @@ gsap.utils.toArray(".project").forEach((proj) => {
     scrollTrigger:{ trigger: proj, start:"top 90%", toggleActions:"play reverse play reverse" }});
 });
 
+// Timeline axis animation
+gsap.set(".projects", {"--axisScale": 0});
+gsap.to(".projects", {
+  "--axisScale": 1,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".projects",
+    start: "top 85%",
+    end: "bottom 15%",
+    scrub: 0.6
+  }
+});
+
 // Custom cursor
 const cursor = document.querySelector(".cursor");
-document.addEventListener("mousemove", (e)=>{
-  gsap.to(cursor, {x:e.clientX, y:e.clientY, duration:0.18, ease:"power2.out"});
-});
+document.addEventListener("mousemove", (e)=>{ gsap.to(cursor, {x:e.clientX, y:e.clientY, duration:0.18, ease:"power2.out"}); });
 document.querySelectorAll("a, .project img").forEach(el=>{
   el.addEventListener("mouseenter", ()=> gsap.to(cursor, {width:56, height:56, background:"rgba(141,211,255,0.2)", borderColor:"transparent", duration:0.2}));
   el.addEventListener("mouseleave", ()=> gsap.to(cursor, {width:28, height:28, background:"transparent", borderColor:"rgba(245,246,248,1)", duration:0.25}));
 });
 
-// ScrollTrigger sync
-lenis.on('scroll', ScrollTrigger.update);
-ScrollTrigger.scrollerProxy(document.documentElement, {
-  scrollTop(value){ return arguments.length ? lenis.scrollTo(value) : window.scrollY; },
-  getBoundingClientRect(){ return {top:0, left:0, width:window.innerWidth, height:window.innerHeight}; }
-});
+// Typewriter loop (works forever)
+gsap.registerPlugin(TextPlugin);
+const typewriter = document.querySelector('.typewriter');
+if (typewriter) {
+  const fullText = "LET’S DESIGN IT RIGHT";
+  const typeSpeed = 0.08;
+  const eraseSpeed = 0.04;
+  const pause = 1.2;
+
+  function loopTypewriter() {
+    gsap.to(typewriter, {
+      duration: fullText.length * typeSpeed,
+      text: fullText,
+      ease: "none",
+      onComplete: () => {
+        gsap.delayedCall(pause, () => {
+          gsap.to(typewriter, {
+            duration: fullText.length * eraseSpeed,
+            text: "",
+            ease: "none",
+            onComplete: loopTypewriter
+          });
+        });
+      }
+    });
+  }
+  loopTypewriter();
+}
 </script>
 </body>
 </html>
